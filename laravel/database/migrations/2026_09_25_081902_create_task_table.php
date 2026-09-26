@@ -6,29 +6,22 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+  
     public function up(): void
     {
-        Schema::create('task', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('task_name'); //Name of task
-             $table->text('Description'); //Details
-              $table->enum('status', ['Pending', 'Completed'])->default('Pending');
-               $table->date('due_date');
-               $table->timestamps(); //created_at & Updated at
-
-            
-            
+            $table->string('task_name');       // Name of task
+            $table->text('description');       // Details
+            $table->enum('status', ['Pending', 'Completed'])->default('Pending');
+            $table->date('due_date');
+            $table->timestamps();              // created_at & updated_at
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+   
     public function down(): void
     {
-        Schema::dropIfExists('task');
+        Schema::dropIfExists('tasks');
     }
 };

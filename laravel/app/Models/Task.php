@@ -3,18 +3,17 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Task extends Model
-{
-    
-        use Hasfactory;
+class Task extends Model{
+    use HasFactory;
 
-        //Allow mass assignment
-        protected$fillable=[
-            'task_name',
-            'description',
-            'status',
-            'due_date'
-        ];
-    }
+    protected $fillable = [
+        'task_name',
+        'description',
+        'status',
+        'due_date',
 
+
+    ] ;
+}
